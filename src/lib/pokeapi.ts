@@ -1,7 +1,7 @@
 export const getAllPokemons = async () => {
   // All pokemons = 1154
   try {
-    const res = await fetch("http://pokeapi.co/api/v2/pokemon/?limit=1154");
+    const res = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=1154");
     const data = res.json();
     return data;
   } catch (error) {
