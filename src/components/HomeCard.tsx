@@ -20,7 +20,7 @@ const HomeCard = ({ pokeData }: any) => {
               currentTarget.onerror = null; // prevents looping
               currentTarget.src = notfoundimg;
             }}
-            className=""
+            className="w-full h-auto"
             alt={pokeData.name}
           />
         </div>

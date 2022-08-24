@@ -59,7 +59,7 @@ const PokeDetail = () => {
             <div className="p-4 flex justify-center items-center">
             <img
                 // src={pokemonDetail?.sprites.other.dream_world.front_default}
-                className="max-h-48"
+                className="max-h-48 w-auto"
                 alt={pokemonDetail?.name}
                 src={pokemonDetail?.sprites.other['official-artwork'].front_default}
                 onError={({ currentTarget }:any) => {
