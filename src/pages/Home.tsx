@@ -3,47 +3,33 @@ import HomeCard from "../components/HomeCard";
 import Searcher from "../components/Searcher";
 import { getAllPokemons, getByType } from "../lib/pokeapi";
 
-const valueTypes = [
-  "normal",
-  "fire",
-  "water",
-  "grass",
-  "flying",
-  "fighting",
-  "poison",
-  "electric",
-  "ground",
-  "rock",
-  "psychic",
-  "ice",
-  "bug",
-  "ghost",
-  "steel",
-  "dragon",
-  "dark",
-  "fairy",
-];
-
 const Home: React.FC = () => {
   const [inputData, setInputData] = useState<string>("");
   const [pokeType, setPokeType] = useState<string>("all");
-  const [allPokemons, setAllPokemons] = useState<any>();
-  // Despues borrar este array:
+  const [allPokemons, setAllPokemons] = useState<Array<{}>>([]);
+  // Cuando tenga paginado borrar este array:
   const [fiftyPokes, setFiftyPokes] = useState<Array<{}>>([]);
-  const [pokeSearch, setPokeSearch] = useState([]);
+  const [pokeSearch, setPokeSearch] = useState<Array<{}>>([]);
   const [searched, setSearched] = useState<boolean>(false)
 
   const cleanSearch = () => {
     setSearched(false)
+    setInputData("");
+    setPokeType("all");
     setPokeSearch([]);
   };
 
   const handleForm = async (e: any) => {
     e.preventDefault();
     console.log({ name: inputData, type: pokeType });
+    console.log(inputData.length)
+    if(inputData.length === 0)return
+
     setSearched(true)
     // Si no hay un type (filtro) seleccionado
     // que busque entre todos
+    if(pokeSearch.length === 0)return
+
     if (pokeType === "all") {
       console.log(allPokemons);
       const newArray = allPokemons?.filter((el: any) =>
@@ -111,8 +97,9 @@ const Home: React.FC = () => {
         setInputData={setInputData}
         setPokeType={setPokeType}
         pokeType={pokeType}
+        inputData={inputData}
       />
-      {searched?       <div>
+      {searched? <div>
         <button className="px-2 rounded cursor-pointer bg-red-500 transition-all hover:bg-red-400  " onClick={()=>cleanSearch()}>Clean Search 🧹</button>
       </div>:''}
       {/* pokemons container */}

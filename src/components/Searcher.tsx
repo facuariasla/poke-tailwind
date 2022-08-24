@@ -19,7 +19,7 @@ const valueTypes = [
   "fairy",
 ];
 
-const Searcher = ({ handleForm, setInputData, setPokeType, pokeType }: any) => {
+const Searcher = ({ handleForm, setInputData, inputData, setPokeType, pokeType }: any) => {
   return (
     <div>
       <form
@@ -34,6 +34,7 @@ const Searcher = ({ handleForm, setInputData, setPokeType, pokeType }: any) => {
               placeholder="eg: squirtle"
               onChange={(e) => setInputData(e.target.value.toLowerCase())}
               autoFocus
+              value={inputData}
             />
             <button
               className="h-8 w-full bg-green-700 text-white transition-all duration-300 opacity-80 hover:opacity-100"
@@ -46,11 +47,11 @@ const Searcher = ({ handleForm, setInputData, setPokeType, pokeType }: any) => {
           <div className="flex flex-col gap-1">
             <label>Type:</label>
             <select
-              defaultValue="all"
+              defaultValue={pokeType}
               name="type"
               // className="custom_input"
               className={`${pokeType} custom_input font-bold`}
-
+              value={pokeType}
               onChange={(e) => setPokeType(e.target.value)}
             >
               <option value="all" className="text-white font-bold">
