@@ -47,7 +47,6 @@ const Searcher = ({ handleForm, setInputData, inputData, setPokeType, pokeType }
           <div className="flex flex-col gap-1">
             <label>Type:</label>
             <select
-              defaultValue={pokeType}
               name="type"
               // className="custom_input"
               className={`${pokeType} custom_input font-bold`}
