@@ -33,7 +33,6 @@ const Searcher = ({ handleForm, setInputData, inputData, setPokeType, pokeType }
               className="custom_input"
               placeholder="eg: squirtle"
               onChange={(e) => setInputData(e.target.value.toLowerCase())}
-              autoFocus
               value={inputData}
             />
             <button
