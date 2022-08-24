@@ -28,26 +28,21 @@ const Home: React.FC = () => {
   // Al clickear BUSCAR
   const handleForm = async (e: any) => {
     e.preventDefault();
-    console.log({ name: inputData, type: pokeType });
-    console.log(inputData.length);
     if (inputData.length === 0) return;
 
     setSearched(true);
     // Si no hay un type (filtro) seleccionado
     // que busque entre todos
     if (pokeType === "all") {
-      console.log(allPokemons);
       const newArray = allPokemons?.filter((el: any) =>
         el.name.includes(inputData)
       );
-      console.log(newArray);
       setPokeSearch(newArray);
       return;
     }
     // Si HAY un type (filtro) seleccionado
     (async () => {
       const resByType = await getByType(pokeType);
-      console.log(resByType);
       const pokemonsType = await resByType.pokemon.map((el: any) => {
         return {
           ...el.pokemon,
@@ -61,11 +56,9 @@ const Home: React.FC = () => {
           //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png
         };
       });
-      console.log(pokemonsType);
       const arrayType = pokemonsType?.filter((el: any) =>
         el.name.includes(inputData)
       );
-      console.log(arrayType);
       setPokeSearch(arrayType);
     })();
   };
@@ -92,7 +85,6 @@ const Home: React.FC = () => {
       setFiftyPokes(pokequeryWImg.slice(0, pokesPerPage));
     })();
 
-    console.log("Agregar paginado");
   }, []);
 
   // Get current pokes

@@ -6,28 +6,26 @@ const Pagination = ({ pokesPerPage, totalPokes, paginate }: any) => {
   }
 
   return (
-    <div className="flex justify-self-center self-center">
-      <div className="flex flex-row gap-2">
+    // <div className="flex justify-self-center self-center gap-2">
+    <div className="grid gap-2 grid-cols-6 sm:grid-cols-12 max-w-xl place-self-center">
         {pageNumbers.map((num: any) => {
-          if(num!=0){
-            return         (
+          if (num != 0) {
+            return (
               // <a href="!#" key={num} className=''>
               <div
                 onClick={() => paginate(num)}
                 key={num}
                 tabIndex={-1}
-                className="border border-white w-8 focus-within:text-green-500 focus-within:border-green-500 hover:border-green-500 hover:text-green-500 cursor-pointer transition"
+                className="flex flex-row justify-center items-center border border-white w-8 focus-within:text-green-500 focus-within:border-green-500 hover:border-green-500 hover:text-green-500 cursor-pointer transition"
               >
-                <div className="flex justify-center items-center ">
+                {/* <div className="flex justify-center items-center "> */}
                   <p className="">{num}</p>
-                </div>
+                {/* </div> */}
               </div>
-            )  
+            );
           }
-
         })}
       </div>
-    </div>
   );
 };
 

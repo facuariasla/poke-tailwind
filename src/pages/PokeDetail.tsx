@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BarValues from "../components/BarValues";
 import { getOnePokemon } from "../lib/pokeapi";
-import notfoundimg from '../assets/icon-poke.png'
+import notfoundimg from "../assets/icon-poke.png";
 
 const PokeDetail = () => {
   const [pokemonDetail, setPokemonDetail] = useState<any>();
@@ -14,7 +14,6 @@ const PokeDetail = () => {
         `https://pokeapi.co/api/v2/pokemon/${id}`
       );
       setPokemonDetail(data);
-      console.log(data);
     })();
   }, []);
 
@@ -57,12 +56,14 @@ const PokeDetail = () => {
             <hr />
 
             <div className="p-4 flex justify-center items-center">
-            <img
+              <img
+                src={
+                  pokemonDetail.sprites.other["official-artwork"].front_default
+                }
                 // src={pokemonDetail?.sprites.other.dream_world.front_default}
                 className="max-h-48 w-auto"
                 alt={pokemonDetail?.name}
-                src={pokemonDetail?.sprites.other['official-artwork'].front_default}
-                onError={({ currentTarget }:any) => {
+                onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = notfoundimg;
                 }}
