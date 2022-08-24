@@ -84,7 +84,6 @@ const Home: React.FC = () => {
 
       setFiftyPokes(pokequeryWImg.slice(0, pokesPerPage));
     })();
-
   }, []);
 
   // Get current pokes
@@ -122,7 +121,7 @@ const Home: React.FC = () => {
       ) : (
         ""
       )}
-      
+
       {/* pokemons container */}
       <div>
         <div className="gap-4 grid s:grid-cols-2 m:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-10 justify-items-center w-full">
@@ -143,11 +142,13 @@ const Home: React.FC = () => {
               ))}
         </div>
       </div>
-      <Pagination
-        pokesPerPage={pokesPerPage}
-        totalPokes={allPokemons.length}
-        paginate={paginate}
-      />
+      {!searched && (
+        <Pagination
+          pokesPerPage={pokesPerPage}
+          totalPokes={allPokemons.length}
+          paginate={paginate}
+        />
+      )}
     </div>
   );
 };
