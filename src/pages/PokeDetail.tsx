@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BarValues from "../components/BarValues";
 import { getOnePokemon } from "../lib/pokeapi";
+import notfoundimg from '../assets/icon-poke.png'
 
 const PokeDetail = () => {
   const [pokemonDetail, setPokemonDetail] = useState<any>();
@@ -58,8 +59,13 @@ const PokeDetail = () => {
             <div className="p-4 flex justify-center items-center">
             <img
                 // src={pokemonDetail?.sprites.other.dream_world.front_default}
-                src={pokemonDetail?.sprites.other['official-artwork'].front_default}
                 className="max-h-48"
+                alt={pokemonDetail?.name}
+                src={pokemonDetail?.sprites.other['official-artwork'].front_default}
+                onError={({ currentTarget }:any) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = notfoundimg;
+                }}
               />
             </div>
           </div>

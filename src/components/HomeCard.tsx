@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-
+import notfoundimg from '../assets/icon-poke.png'
 const HomeCard = ({ pokeData }: any) => {
-
   return (
     <Link to={`/${pokeData.name}`}>
       <div className="card">
@@ -15,11 +14,19 @@ const HomeCard = ({ pokeData }: any) => {
           )}
         </div>
         <div>
-          <img src={pokeData.imageurl} className="" />
+          <img
+            src={pokeData.imageurl}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null; // prevents looping
+              currentTarget.src = notfoundimg;
+            }}
+            className=""
+            alt={pokeData.name}
+          />
         </div>
         <p className="text-xs">{pokeData.pokeid}</p>
       </div>
-      </Link>
+    </Link>
   );
 };
 
