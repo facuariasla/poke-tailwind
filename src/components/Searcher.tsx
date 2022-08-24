@@ -48,10 +48,12 @@ const Searcher = ({ handleForm, setInputData, setPokeType, pokeType }: any) => {
             <select
               defaultValue="all"
               name="type"
-              className="custom_input"
+              // className="custom_input"
+              className={`${pokeType} custom_input font-bold`}
+
               onChange={(e) => setPokeType(e.target.value)}
             >
-              <option value="all" className="font-bold">
+              <option value="all" className="text-white font-bold">
                 All
               </option>
               {valueTypes.map((el: string) => (
