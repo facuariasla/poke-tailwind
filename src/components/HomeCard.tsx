@@ -17,6 +17,7 @@ const HomeCard = ({ pokeData }: any) => {
         <div>
           <img src={pokeData.imageurl} className="" />
         </div>
+        <p className="text-xs">{pokeData.pokeid}</p>
       </div>
       </Link>
   );

@@ -9,12 +9,24 @@ export const getAllPokemons = async () => {
   }
 };
 
-export const getOnePokemon = async (url:string) => {
+export const getOnePokemon = async (url: string) => {
   try {
     const res = await fetch(url);
     const data = res.json();
     return data;
   } catch (error) {
     console.log(error);
+    return error
+  }
+};
+
+export const getByType = async (type:string) => {
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+    const data = res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return error
   }
 }

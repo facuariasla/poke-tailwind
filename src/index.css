@@ -12,14 +12,19 @@ html {
   color: #fff;
   background-color: #39414d;
   padding: 0 8px;
+  outline: none;
+  transition: all .3s;
 }
+.custom_input:focus{
+  background-color: #383c42;
 
+}
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem .5rem;
+  padding: .5rem;
   width: 120px;
   min-height: 120px;
   border: gray 1px solid;
