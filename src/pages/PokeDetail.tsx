@@ -98,10 +98,7 @@ const PokeDetail = () => {
             <p className="text-2xl font-medium text-center pb-2">Skills:</p>
             <div className="flex flex-col gap-2">
               {pokemonDetail?.abilities.map((el: any, index: number) => (
-                <div key={index} className="cursor-pointer">
-                  <SkillDetails skillData={el} />
-                  <hr />
-                </div>
+                  <SkillDetails key={index} skillData={el} />
                 // <div key={index} className='flex flex-row gap-4'>
                 //   <p>
                 //     {el.ability.name.charAt(0).toUpperCase() +

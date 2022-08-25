@@ -3,9 +3,11 @@ import { getSkill } from "../lib/pokeapi";
 
 const SkillDetails = ({ skillData }: any) => {
   const [oneSkillData, setOneSkillData] = useState<Array<{}>>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
 
   const handleDescription = async (url: string) => {
+    setShow(!show)
     if (oneSkillData.length > 0) return;
     setLoading(true);
     (async () => {
@@ -20,21 +22,24 @@ const SkillDetails = ({ skillData }: any) => {
   };
 
   return (
-    <div onClick={() => handleDescription(skillData.ability.url)}>
+    <button
+      className="flex justify-center items-center"
+      onClick={() => handleDescription(skillData.ability.url)}
+    >
       {/* CONTENIDO */}
       <div className="flex flex-col sm:gap-1 w-full py-2">
         {/* LEFT - TOP  BLOCK */}
-        <div    className="self-center text-xl text-center text-green-500 font-medium">
+        <div className="self-center text-xl text-center text-green-500 font-medium">
           <p className="text-center">
             {skillData.ability.name.charAt(0).toUpperCase() +
               skillData.ability.name.slice(1)}
-              {"  "}
-              {oneSkillData?.length === 0 && '↓'}
+            {"  "}
+            {show? "↑":"↓"}
           </p>
         </div>
         {/* RIGHT - DOWN BLOCK */}
         <div>
-          {loading
+          {show? loading
             ? "Loading..."
             : oneSkillData?.length > 0 &&
               oneSkillData?.map((el: any, index: number) => (
@@ -46,10 +51,11 @@ const SkillDetails = ({ skillData }: any) => {
                     <i>{el.effect}</i>
                   </p>
                 </div>
-              ))}
+              )):''}
         </div>
+        <hr />
       </div>
-    </div>
+    </button> 
   );
 };
 
