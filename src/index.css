@@ -13,6 +13,7 @@ html {
   padding: 0 8px;
   outline: none;
   transition: all .3s;
+  font-weight: 500;
 }
 .custom_input:focus{
   background-color: #383c42;

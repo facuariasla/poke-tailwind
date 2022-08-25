@@ -22,7 +22,7 @@ const PokeDetail = () => {
   return (
     <div className="px-4 pb-4 flex flex-col w-full justify-center items-center">
       <Link to="/">
-        <p className="text-5xl pb-2">←</p>
+        <p className="text-5xl pb-2 transition hover:text-green-400">←</p>
       </Link>
       {pokemonDetail ? (
         <div className="flex flex-col max-w-2xl w-full gap-4">
@@ -30,7 +30,7 @@ const PokeDetail = () => {
             {/* LEFT BLOCK - TOP BLOCK */}
             <div className="flex flex-col w-full">
               <div className="flex flex-col justify-center items-center">
-                <p className="text-2xl font-medium">
+                <p className="text-3xl font-medium">
                   {pokemonDetail?.name?.charAt(0).toUpperCase() +
                     pokemonDetail?.name?.slice(1)}
                 </p>

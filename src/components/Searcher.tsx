@@ -28,7 +28,7 @@ const Searcher = ({ handleForm, setInputData, inputData, setPokeType, pokeType }
       >
         <div className="flex flex-col m:flex-row gap-1 w-full ">
           <div className=" flex flex-col gap-1 w-full m:w-10/12">
-            <label>Search by name</label>
+            <label className='font-medium'>Search by name</label>
             <input
               className="custom_input"
               placeholder="eg: squirtle"
@@ -36,7 +36,7 @@ const Searcher = ({ handleForm, setInputData, inputData, setPokeType, pokeType }
               value={inputData}
             />
             <button
-              className="h-8 w-full bg-green-700 text-white transition-all duration-300 opacity-80 hover:opacity-100"
+              className="h-8 w-full bg-green-700 text-white transition-all duration-300 opacity-80 hover:bg-green-500 font-medium"
               type="submit"
             >
               Search
@@ -44,11 +44,11 @@ const Searcher = ({ handleForm, setInputData, inputData, setPokeType, pokeType }
           </div>
 
           <div className="flex flex-col gap-1">
-            <label>Type:</label>
+            <label className="font-medium">Type:</label>
             <select
               name="type"
               // className="custom_input"
-              className={`${pokeType} custom_input font-bold`}
+              className={`${pokeType} custom_input`}
               value={pokeType}
               onChange={(e) => setPokeType(e.target.value)}
             >
