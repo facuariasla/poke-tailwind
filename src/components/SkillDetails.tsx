@@ -45,21 +45,6 @@ const SkillDetails = ({ skillData }: any) => {
                   </p>
                 </div>
               ))}
-
-          {/* {oneSkillData.length > 0
-            ? oneSkillData.map((el: any, index: number) => (
-                <div key={index}>
-                  <p className="font-medium text-yellow-500">
-                    {el.short_effect}
-                  </p>
-                  <p>
-                    <i>{el.effect}</i>
-                  </p>
-                </div>
-              ))
-            : loading
-            ? "Loading..."
-            : ""} */}
         </div>
       </div>
     </div>
