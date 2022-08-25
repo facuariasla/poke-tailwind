@@ -30,7 +30,7 @@ const PokeDetail = () => {
             {/* LEFT BLOCK - TOP BLOCK */}
             <div className="flex flex-col w-full">
               <div className="flex flex-col justify-center items-center">
-                <p className="text-3xl font-medium">
+                <p className="text-4xl font-medium">
                   {pokemonDetail?.name?.charAt(0).toUpperCase() +
                     pokemonDetail?.name?.slice(1)}
                 </p>

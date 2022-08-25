@@ -98,7 +98,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-4 p-4">
-      <header className="flex justify-center ">
+      <header className="flex justify-center flex-col m:flex-row">
         <p className="text-5xl font-bold text-center text-yellow-400">Poke-</p>
         <p className="text-5xl font-bold text-center text-green-500">buscador</p>
       </header>
