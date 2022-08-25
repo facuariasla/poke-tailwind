@@ -22,7 +22,7 @@ const SkillDetails = ({ skillData }: any) => {
   return (
     <div>
       {/* CONTENIDO */}
-      <div className="flex flex-row sm:flex-col gap-4 sm:gap-1 w-full py-2">
+      <div className="flex flex-col sm:gap-1 w-full py-2">
         {/* LEFT - TOP  BLOCK */}
         <div  onClick={() => handleDescription(skillData.ability.url)}  className="self-center text-xl text-center text-green-500 font-medium">
           <p className="text-center">
