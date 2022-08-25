@@ -17,8 +17,8 @@ const SkillDetails = ({ skillData }: any) => {
       );
       console.log(ENGdata);
       setOneSkillData(ENGdata);
+      setLoading(false);
     })();
-    setLoading(false);
   };
 
   return (
