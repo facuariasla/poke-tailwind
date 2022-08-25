@@ -28,6 +28,8 @@ const SkillDetails = ({ skillData }: any) => {
           <p onClick={() => handleDescription(skillData.ability.url)}>
             {skillData.ability.name.charAt(0).toUpperCase() +
               skillData.ability.name.slice(1)}
+              {"  "}
+              {oneSkillData?.length === 0 && '↓'}
           </p>
         </div>
         {/* RIGHT - DOWN BLOCK */}
