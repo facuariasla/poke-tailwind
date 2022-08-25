@@ -24,8 +24,8 @@ const SkillDetails = ({ skillData }: any) => {
       {/* CONTENIDO */}
       <div className="flex flex-row sm:flex-col gap-4 sm:gap-1 w-full py-2">
         {/* LEFT - TOP  BLOCK */}
-        <div className="self-center text-xl text-center text-green-500 font-medium">
-          <p onClick={() => handleDescription(skillData.ability.url)}>
+        <div  onClick={() => handleDescription(skillData.ability.url)}  className="self-center text-xl text-center text-green-500 font-medium">
+          <p className="text-center">
             {skillData.ability.name.charAt(0).toUpperCase() +
               skillData.ability.name.slice(1)}
               {"  "}
