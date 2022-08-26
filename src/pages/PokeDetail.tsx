@@ -34,26 +34,28 @@ const PokeDetail = () => {
                   {pokemonDetail?.name?.charAt(0).toUpperCase() +
                     pokemonDetail?.name?.slice(1)}
                 </p>
-                <div className="flex flex-row gap-2 ">
+                <div className="flex flex-row gap-2 p-1">
                   {pokemonDetail?.types.map((el: any, index: number) => (
                     // {el.type.name}
-                    <p
-                      key={index}
-                      className={`${el.type.name} font-bold text-lg`}
-                    >
-                      {el.type.name.charAt(0).toUpperCase() +
-                        el.type.name.slice(1)}
-                    </p>
+                    <div key={index} className={`${el.type.name} px-1 rounded-md`}>
+                      <Link to='/types'>
+                      <p className="font-bold text-lg transition hover:opacity-80">
+                        {el.type.name.charAt(0).toUpperCase() +
+                          el.type.name.slice(1)}
+                      </p>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </div>
               <hr />
               <div className="gap-6 flex flex-row justify-center items-center">
                 <p className="text-center font-medium">
-                  Height: {pokemonDetail?.height}
+                  {/* Height: {Math.round((pokemonDetail?.height/7) * 10) / 10} m */}
+                  Height: {pokemonDetail?.height / 10} m
                 </p>
                 <p className="text-center font-medium">
-                  Weight: {pokemonDetail?.weight}
+                  Weight: {pokemonDetail?.weight / 10} kg
                 </p>
               </div>
               <hr />
@@ -98,7 +100,7 @@ const PokeDetail = () => {
             <p className="text-2xl font-medium text-center pb-2">Skills:</p>
             <div className="flex flex-col gap-2">
               {pokemonDetail?.abilities.map((el: any, index: number) => (
-                  <SkillDetails key={index} skillData={el} />
+                <SkillDetails key={index} skillData={el} />
                 // <div key={index} className='flex flex-row gap-4'>
                 //   <p>
                 //     {el.ability.name.charAt(0).toUpperCase() +
