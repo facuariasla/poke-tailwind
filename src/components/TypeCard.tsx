@@ -2,7 +2,7 @@ import TypesRelCard from "./TypesRelCard";
 
 const TypeCard = ({ cardData }: any) => {
   return (
-    <div className="bg-gray-900 flex flex-col gap-2 border border-white m:p-2 rounded-lg">
+    <div id={cardData.type} className="bg-gray-900 flex flex-col gap-2  px-4 py-2 rounded-lg">
       <div>
         <p className={`${cardData.type} text-2xl font-bold text-center`}>
           {cardData.type.charAt(0).toUpperCase() + cardData.type.slice(1)}

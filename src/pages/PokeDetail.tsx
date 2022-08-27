@@ -5,6 +5,8 @@ import { getOnePokemon } from "../lib/pokeapi";
 import notfoundimg from "../assets/icon-poke.png";
 import SkillDetails from "../components/SkillDetails";
 
+import { HashLink } from "react-router-hash-link";
+
 const PokeDetail = () => {
   const [pokemonDetail, setPokemonDetail] = useState<any>();
   const { id } = useParams();
@@ -37,13 +39,24 @@ const PokeDetail = () => {
                 <div className="flex flex-row gap-2 p-1">
                   {pokemonDetail?.types.map((el: any, index: number) => (
                     // {el.type.name}
-                    <div key={index} className={`${el.type.name} px-1 rounded-md`}>
-                      <Link to='/types'>
+                    <div key={index} className={`${el.type.name}`}>
+
+                      {/* <Link
+                        to={{ pathname: "/types", hash: `#${el.type.name}` }}
+                      >
+                        <p className="font-bold text-lg transition hover:opacity-80">
+                          {el.type.name.charAt(0).toUpperCase() +
+                            el.type.name.slice(1)}{" "}
+                          →
+                        </p>
+                      </Link> */}
+                      <HashLink to={`/types#${el.type.name}`}>
                       <p className="font-bold text-lg transition hover:opacity-80">
-                        {el.type.name.charAt(0).toUpperCase() +
-                          el.type.name.slice(1)}
-                      </p>
-                      </Link>
+                          {el.type.name.charAt(0).toUpperCase() +
+                            el.type.name.slice(1)}{" "}
+                          →
+                        </p>
+                      </HashLink>
                     </div>
                   ))}
                 </div>

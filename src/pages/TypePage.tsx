@@ -1,6 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import TypeCard from "../components/TypeCard";
-import TypesRelCard from "../components/TypesRelCard";
 import { TypesRelations } from "../types";
 
 const TypePage = () => {

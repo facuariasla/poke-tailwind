@@ -1,6 +1,6 @@
 const TypesRelCard = ({ data, title }: any) => {
   return (
-    <div className="flex flex-col sm:flex-row items-center sm:gap-4 pb-2 border-b border-white">
+    <div className="flex flex-col sm:flex-row items-center sm:gap-4 pb-2 border-b border-gray-700">
       <p className="font-medium">{title}</p>
       {/* <div className="flex flex-row gap-2"> */}
       <div className="flex flex-wrap gap-2 justify-center">
