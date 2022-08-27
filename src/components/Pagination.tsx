@@ -16,7 +16,7 @@ const Pagination = ({ pokesPerPage, totalPokes, paginate }: any) => {
                 onClick={() => paginate(num)}
                 key={num}
                 tabIndex={-1}
-                className="flex flex-row justify-center items-center border border-white w-8 focus-within:text-green-500 focus-within:border-green-500 hover:border-green-500 hover:text-green-500 cursor-pointer transition"
+                className="flex flex-row justify-center items-center border border-white w-8 focus-within:text-green-500 focus-within:border-green-500 hover:border-green-500 hover:text-green-500 cursor-pointer transition rounded-lg"
               >
                 {/* <div className="flex justify-center items-center "> */}
                   <p className="">{num}</p>
