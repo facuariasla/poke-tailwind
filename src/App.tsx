@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import PokeDetail from "./pages/PokeDetail";
-import Types from "./pages/Types";
+import TypePage from "./pages/TypePage";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/:id' element={<PokeDetail/>}/>
-            <Route path='/types' element={<Types/>}/>
+            <Route path='/types' element={<TypePage/>}/>
           </Routes>
         </HashRouter>
       </div>

@@ -51,7 +51,7 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-
+/* COLORS ADDED - CANT USE TAILWIND WITH TEMPLATE VARIABLES IN CLASSES */
 .normal{
   color: #A8A878;
   /* background-color: #A8A878; */
